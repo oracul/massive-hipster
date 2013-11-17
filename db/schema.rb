@@ -11,12 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131116022250) do
+ActiveRecord::Schema.define(version: 20131117193741) do
 
   create_table "behaviors", force: true do |t|
     t.string   "behavior"
     t.string   "intervention"
     t.string   "consequence"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "interventions", force: true do |t|
+    t.string   "sfname"
+    t.string   "slname"
+    t.string   "intervention"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "students", force: true do |t|
+    t.string   "firstname"
+    t.string   "lastname"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

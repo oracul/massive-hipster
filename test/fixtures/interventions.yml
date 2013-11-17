@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sfname: MyString
+  slname: MyString
+  intervention: MyString
+
+two:
+  sfname: MyString
+  slname: MyString
+  intervention: MyString
