@@ -2,8 +2,12 @@
 <head>
 	</head>
 	<body>
+
+
 		Hellow from rails!
 		<%= @time %>
 		<p><%= link_to "Goodbye!", :action => "goodbye" %></p>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+
 	</body>
 	</html>

@@ -1,0 +1,29 @@
+<%= form_for(@behavior) do |f| %>
+  <% if @behavior.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@behavior.errors.count, "error") %> prohibited this behavior from being saved:</h2>
+
+      <ul>
+      <% @behavior.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :behavior %><br>
+    <%= f.text_field :behavior %>
+  </div>
+  <div class="field">
+    <%= f.label :intervention %><br>
+    <%= f.text_field :intervention %>
+  </div>
+   <div class="field">
+    <%= f.label :consequence %><br>
+    <%= f.text_field :consequence %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
