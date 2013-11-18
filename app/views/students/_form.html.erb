@@ -11,7 +11,11 @@
     </div>
   <% end %>
 
+<%= @user %>
 
+<div class="field">
+<%= f.hidden_field :user_id, :value => @user %>
+</div>
 
   <div class="field">
     <%= f.label :firstname %><br>
@@ -26,11 +30,15 @@
   </div>
 <% end %>
 
+<!-- <%= options_from_collection_for_select(@interventions, 'id', 'intervention') %> -->
+
+<!--
 <select>
 <% @interventions.each do |intervention| %>
 <option value="<%= intervention.intervention %>"><%= intervention.intervention %></option>
 <% end %>
-</select>
+
+</select>-->
 <!--
 <table>
   <thead>

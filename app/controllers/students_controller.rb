@@ -4,7 +4,8 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    @students = Student.where(user_id: current_user.id)
+    @students2 = Student.find(current_user.id)
     @interventions = Intervention.all
   end
 
@@ -17,6 +18,7 @@ class StudentsController < ApplicationController
   def new
     @student = Student.new
     @interventions = Intervention.all
+    @user = current_user.id
   end
 
   # GET /students/1/edit
@@ -71,6 +73,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:firstname, :lastname)
+      params.require(:student).permit(:firstname, :lastname, :user_id)
     end
 end

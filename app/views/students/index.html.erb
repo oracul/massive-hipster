@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>User Id </th>
       <th>Firstname</th>
       <th>Lastname</th>
       <th></th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @students.each do |student| %>
       <tr>
+        <td><%= student.user_id %> </td>
         <td><%= student.firstname %></td>
         <td><%= student.lastname %></td>
         <td><%= link_to 'Show', student %></td>

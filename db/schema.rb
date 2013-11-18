@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131117193741) do
+ActiveRecord::Schema.define(version: 20131118005102) do
 
   create_table "behaviors", force: true do |t|
     t.string   "behavior"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20131117193741) do
     t.string   "lastname"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "intervention_type"
+    t.integer  "user_id"
   end
 
   create_table "users", force: true do |t|
@@ -49,6 +51,7 @@ ActiveRecord::Schema.define(version: 20131117193741) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
