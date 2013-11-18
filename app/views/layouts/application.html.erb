@@ -9,7 +9,7 @@
 </head>
 <body id"main">
 
-	  <%= link_to('Logout', 'logout') %>  
+	  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>  
 	  <%= link_to('Interventions', 'interventions') %>
 
 <p class="notice"><%= notice %></p>
