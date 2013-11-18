@@ -1,5 +1,7 @@
 Food::Application.routes.draw do
   
+ root :to => 'students#index'
+ 
   resources :students
 
   resources :interventions
@@ -8,7 +10,7 @@ Food::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
- root :to =>'students#index'
+ 
  get 'say/goodbye' => 'say#goodbye'
 
 
