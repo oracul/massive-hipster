@@ -3,18 +3,20 @@ Food::Application.routes.draw do
  
 
 
- 
+   resources :students
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
 
-    root :to => 'students#index'
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
-    devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
-  resources :students
+  root :to => 'students#index'
+
+
 
   resources :interventions
 
