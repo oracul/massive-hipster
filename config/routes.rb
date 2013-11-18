@@ -2,10 +2,6 @@ Food::Application.routes.draw do
   
  
 
-
-   resources :students
-
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -13,18 +9,11 @@ Food::Application.routes.draw do
 
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
-
   root :to => 'students#index'
 
+  resources :interventions, :behaviors, :students
 
-
-  resources :interventions
-
-
-  resources :behaviors
-
-
- get 'say/goodbye' => 'say#goodbye'
+  get 'say/goodbye' => 'say#goodbye'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
