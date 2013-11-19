@@ -12,6 +12,10 @@
     </tr>
   </thead>
 
+  <% @students.each do |student| %>
+  <%= student.firstname %>
+<% end %>
+
 <!--
   <tbody>
     <% @students.each do |student| %>

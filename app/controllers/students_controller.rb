@@ -6,7 +6,9 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @students = Student.where(user_id: current_user.id)
+  #  @students = Student.where(user_id: current_user.id)
+    @users = User.find(current_user.id)
+    @students = @users.students
     @students2 = Student.where(current_user.id)
     @interventions = Intervention.all
   end
