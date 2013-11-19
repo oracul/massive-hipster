@@ -7,7 +7,7 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @students = Student.where(user_id: current_user.id)
-    @students2 = Student.find(current_user.id)
+    @students2 = Student.where(current_user.id)
     @interventions = Intervention.all
   end
 
