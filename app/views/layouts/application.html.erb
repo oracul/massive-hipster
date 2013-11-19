@@ -10,9 +10,9 @@
 <body id"main">
 
 	  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>  
-	  <%= link_to('Interventions', 'interventions') %>
-	  <%= link_to('Students', 'students') %>
-	  <%= link_to('My Account', 'edit') %>
+	  <%= link_to('Interventions', interventions_path) %>
+	  <%= link_to('Students', students_path) %>
+	  <%= link_to('My Account', edit_user_registration_path) %>
 
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
