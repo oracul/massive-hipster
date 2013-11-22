@@ -3,17 +3,24 @@
 <table>
   <thead>
     <tr>
-      <th>User Id </th>
       <th>Firstname</th>
       <th>Lastname</th>
+      <th>Intervention</th>
       <th></th>
       <th></th>
       <th></th>
     </tr>
   </thead>
 
+<tbody>
   <% @students.each do |student| %>
-  <%= student.firstname %>
+  <tr>
+  <td><%= student.firstname %></td>
+  <td><%= student.firstname %></td>
+  <td><%= link_to 'Show', student %></td>
+  <td><%= link_to 'Edit', edit_student_path(student) %></td>
+  <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
 <% end %>
 
 <!--

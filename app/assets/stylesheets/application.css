@@ -11,10 +11,20 @@
  *= require_self
  *= require_tree .
  */
+ /*
  body{
  	margin-left: auto;
  	margin-right: auto;
  	width: 70%;
+ 	height: 100%;
  	background-color: #666666;
  }
-
+*/
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+.container .credit {
+  margin: 20px 0;
+}
