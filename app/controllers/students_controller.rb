@@ -23,6 +23,9 @@ class StudentsController < ApplicationController
     @student = Student.new
     @interventions = Intervention.all
     @user = current_user.id
+    def food_man
+      "hey"
+    end
   end
 
   # GET /students/1/edit
@@ -77,6 +80,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:firstname, :lastname, :user_id)
+      params.require(:student).permit(:firstname, :lastname, :user_id, :intervention_type)
     end
 end

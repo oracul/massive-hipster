@@ -1,4 +1,4 @@
-<%= form_for(@student) do |f| %>
+ <%= form_for(@student) do |f| %>
   <% if @student.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
@@ -10,6 +10,8 @@
       </ul>
     </div>
   <% end %>
+
+
 
 <%= @user %>
 
@@ -25,12 +27,21 @@
     <%= f.label :lastname %><br>
     <%= f.text_field :lastname %>
   </div>
+    <div class="field">
+    <%= f.label :intervention_type %><br>
+    <%= f.text_field :intervention_type %>
+  </div>
+  <div class="field">
+</div>
+  <%= collection_select @student, :intervention_type, Intervention.all, :id, :intervention, :prompt => "Select an intervention" %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
 
-<!-- <%= options_from_collection_for_select(@interventions, 'id', 'intervention') %> -->
+
+
 
 <!--
 <select>
@@ -38,7 +49,11 @@
 <option value="<%= intervention.intervention %>"><%= intervention.intervention %></option>
 <% end %>
 
-</select>-->
+</select> 
+
+
+
+
 <!--
 <table>
   <thead>
