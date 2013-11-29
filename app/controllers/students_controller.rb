@@ -23,9 +23,6 @@ class StudentsController < ApplicationController
     @student = Student.new
     @interventions = Intervention.all
     @user = current_user.id
-    def food_man
-      "hey"
-    end
   end
 
   # GET /students/1/edit

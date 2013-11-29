@@ -1,10 +1,10 @@
 Food::Application.routes.draw do
   
-  resources :mstudents
-
  root to: 'interventions#index'
 
-  resources :interventions, :behaviors, :students
+
+
+  resources :interventions, :behaviors, :students, :mstudents
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

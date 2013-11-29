@@ -3,10 +3,17 @@ class MstudentsController < ApplicationController
 
   # GET /mstudents
   # GET /mstudents.json
+
+
   def index
     @mstudents = Mstudent.all
   end
 
+  def aut
+   @findstudents = Mstudent.all
+  end
+
+ 
   # GET /mstudents/1
   # GET /mstudents/1.json
   def show
@@ -63,9 +70,11 @@ class MstudentsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
     def set_mstudent
       @mstudent = Mstudent.find(params[:id])
     end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mstudent_params

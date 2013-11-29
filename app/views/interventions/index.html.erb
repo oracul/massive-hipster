@@ -3,8 +3,6 @@
 <table>
   <thead>
     <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
       <th>Intervention</th>
       <th></th>
       <th></th>
@@ -15,8 +13,7 @@
   <tbody>
     <% @interventions.each do |intervention| %>
       <tr>
-        <td><%= intervention.sfname %></td>
-        <td><%= intervention.slname %></td>
+        <td><%= time_ago_in_words(intervention.created_at) %></td>
         <td><%= intervention.intervention %></td>
         <td><%= link_to 'Show', intervention %></td>
         <td><%= link_to 'Edit', edit_intervention_path(intervention) %></td>
