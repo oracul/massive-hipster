@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131124162555) do
+ActiveRecord::Schema.define(version: 20131129175215) do
 
   create_table "behaviors", force: true do |t|
     t.string   "behavior"
@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(version: 20131124162555) do
     t.string   "sfname"
     t.string   "slname"
     t.string   "intervention"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mstudents", force: true do |t|
+    t.string   "fname"
+    t.string   "lname"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

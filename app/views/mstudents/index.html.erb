@@ -1,0 +1,30 @@
+<h1>Listing mstudents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fname</th>
+      <th>Lname</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mstudents.each do |mstudent| %>
+      <tr>
+        <td><%= mstudent.fname %></td>
+        <td><%= mstudent.lname %></td>
+        <td><%= mstudent.fname + " " + mstudent.lname %></td>
+        <td><%= link_to 'Show', mstudent %></td>
+        <td><%= link_to 'Edit', edit_mstudent_path(mstudent) %></td>
+        <td><%= link_to 'Destroy', mstudent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mstudent', new_mstudent_path %>

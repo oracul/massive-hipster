@@ -1,8 +1,9 @@
-<h1>Listing students</h1>
+<h1>Tracker</h1>
 
 <table>
   <thead>
     <tr>
+      <th>Time</th>
       <th>Firstname</th>
       <th>Lastname</th>
       <th>Intervention</th>
@@ -15,6 +16,7 @@
 <tbody>
   <% @students.each do |student| %>
   <tr>
+  <td><%= time_ago_in_words(student.created_at) %></td>
   <td><%= student.firstname %></td>
   <td><%= student.firstname %></td>
   <td><%= student.intervention_type %></td>
@@ -42,4 +44,4 @@
 
 <br>
 
-<%= link_to 'New Student', new_student_path %>
+<%= link_to 'Track something new', new_student_path %>

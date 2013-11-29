@@ -69,6 +69,6 @@ class InterventionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def intervention_params
-      params.require(:intervention).permit(:sfname, :slname, :intervention)
+      params.require(:intervention).permit(:sfname, :slname, :intervention, :intervention_type)
     end
 end

@@ -13,7 +13,7 @@
 
 
 
-<%= @user %>
+<!--<%= @user %>-->
 
 <div class="field">
 <%= f.hidden_field :user_id, :value => @user %>
@@ -27,13 +27,14 @@
     <%= f.label :lastname %><br>
     <%= f.text_field :lastname %>
   </div>
-    <div class="field">
-    <%= f.label :intervention_type %><br>
-    <%= f.text_field :intervention_type %>
-  </div>
+
   <div class="field">
+   <%= collection_select :student, :firstname, Mstudent.all, :fname, :fullname, :prompt => "Select name" %>
+  </div>
+
+<div class="field">
+  <%= collection_select :student, :intervention_type, Intervention.all, :intervention, :intervention, :prompt => "Select an intervention" %>
 </div>
-  <%= collection_select @student, :intervention_type, Intervention.all, :id, :intervention, :prompt => "Select an intervention" %>
 
   <div class="actions">
     <%= f.submit %>

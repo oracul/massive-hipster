@@ -1,5 +1,7 @@
 Food::Application.routes.draw do
   
+  resources :mstudents
+
  root to: 'interventions#index'
 
   resources :interventions, :behaviors, :students
