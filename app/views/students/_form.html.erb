@@ -25,22 +25,24 @@
 <%= f.hidden_field :user_id, :value => @user %>
 </div>
 
-<!--
   <div class="field">
-    <%= f.label :firstname %><br>
-    <%= f.text_field :firstname %>
-  </div>
-  <div class="field">
-    <%= f.label :lastname %><br>
-    <%= f.text_field :lastname %>
-  </div>
--->
-  <div class="field">
+    <%= f.label :fullname %><br>
    <%= collection_select :student, :firstname, Mstudent.all, :fullname, :fullname, :prompt => "Select name" %>
   </div>
 
+   <div class="field">
+    <%= f.label :behavior %>
+   <%= collection_select :student, :behive, Behavior.all, :behavior, :behavior, :prompt => "Select behavior" %>
+  </div>
+
 <div class="field">
+  <%= f.label :intervention %><br>
   <%= collection_select :student, :intervention_type, Intervention.all, :intervention, :intervention, :prompt => "Select an intervention" %>
+</div>
+
+<div class="field">
+<%= f.label :comment %><br>
+<%= f.text_field :comment %>
 </div>
 
   <div class="actions">

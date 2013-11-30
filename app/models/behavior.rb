@@ -1,3 +1,3 @@
 class Behavior < ActiveRecord::Base
-	validates_presence_of :intervention
+	belongs_to :student
 end

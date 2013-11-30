@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131129175215) do
+ActiveRecord::Schema.define(version: 20131130172054) do
 
   create_table "behaviors", force: true do |t|
     t.string   "behavior"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 20131129175215) do
     t.datetime "updated_at"
     t.string   "intervention_type"
     t.integer  "user_id"
+    t.string   "comment"
+    t.string   "behive"
   end
 
   create_table "users", force: true do |t|
