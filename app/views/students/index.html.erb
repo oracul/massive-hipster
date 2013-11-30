@@ -1,28 +1,24 @@
 <h1>Tracker</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Time</th>
-      <th>Firstname</th>
-      <th>Intervention</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-<tbody>
-  <% @students.each do |student| %>
-  <tr>
-  <td><%= time_ago_in_words(student.created_at) %></td>
-  <td><%= student.firstname %></td>
-  <td><%= student.intervention_type %></td>
-  <td><%= link_to 'Show', student %></td>
-  <td><%= link_to 'Edit', edit_student_path(student) %></td>
-  <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<% @students.each do |student| %>
+<div class="status">
+  <p><strong> <%= student.firstname %> </strong></p>
+  <p> Intervention: 
+    <%= student.intervention_type %>
+  </p>
+
+  <div class="meta">
+  <%= time_ago_in_words(student.created_at) %>
+  <span class="admin">
+  <%= link_to 'Show', student %>
+  <%= link_to 'Edit', edit_student_path(student) %>
+  <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %>
+</span>
+</div>
+</div>
+  <% end %>
+
 
 <!--
   <tbody>
@@ -38,8 +34,6 @@
     <% end %>
   </tbody>
 -->
-</table>
 
 <br>
-
 <%= link_to 'Track something new', new_student_path %>

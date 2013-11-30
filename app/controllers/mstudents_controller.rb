@@ -10,7 +10,6 @@ class MstudentsController < ApplicationController
   end
 
   def aut
-   @findstudents = Mstudent.all
   end
 
  

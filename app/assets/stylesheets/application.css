@@ -28,3 +28,24 @@
 .container .credit {
   margin: 20px 0;
 }
+
+.status {
+	border-bottom: solid 1px #CCC;
+	padding: 5px 0;
+}
+
+.status.hover {
+	background: #FAFAFA;
+}
+
+.status p {
+	margin: 4px 0;
+}
+
+.status .admin {
+	display: none;
+}
+
+.status.hover .admin {
+	display: inline;
+}

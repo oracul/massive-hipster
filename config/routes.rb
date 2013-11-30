@@ -15,6 +15,10 @@ Food::Application.routes.draw do
 
   get 'say/goodbye' => 'say#goodbye'
 
+  get 'mstudents/aut/:id' => 'mstudents#aut#:id'
+
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

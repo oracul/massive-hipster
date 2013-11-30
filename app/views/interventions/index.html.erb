@@ -4,16 +4,13 @@
   <thead>
     <tr>
       <th>Intervention</th>
-      <th></th>
-      <th></th>
-      <th></th>
+
     </tr>
   </thead>
 
   <tbody>
     <% @interventions.each do |intervention| %>
       <tr>
-        <td><%= time_ago_in_words(intervention.created_at) %></td>
         <td><%= intervention.intervention %></td>
         <td><%= link_to 'Show', intervention %></td>
         <td><%= link_to 'Edit', edit_intervention_path(intervention) %></td>
