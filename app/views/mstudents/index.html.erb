@@ -16,9 +16,8 @@
       <tr>
         <td><%= mstudent.fname %></td>
         <td><%= mstudent.lname %></td>
-        <td><%= link_to 'Show', mstudent %></td>
         <td><%= link_to 'Edit', edit_mstudent_path(mstudent) %></td>
-        <td><%= link_to 'Destroy', mstudent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', mstudent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

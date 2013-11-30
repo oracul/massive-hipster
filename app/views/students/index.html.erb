@@ -3,13 +3,9 @@
 
 <% @students.each do |student| %>
 <div class="status">
-  <p><strong> <%= student.firstname %></strong></p>
+  <p><strong> <%= student.firstname %>  </strong></p>
+  <p>  <i><%= student.behive %></i> | Intervention: <i><%= student.intervention_type %></i> </p>
   
-  <p> Intervention: 
-    <i><%= student.intervention_type %></i> 
-    Behavior:
-    <i><%= student.behive %></i>
-  </p>
 
   <div class="meta">
   <%= time_ago_in_words(student.created_at) %>
@@ -41,5 +37,6 @@
 <br>
 <%= link_to 'Track something new', new_student_path %>
 <br>
+<center>
 <%= will_paginate @students %>
-
+</center>

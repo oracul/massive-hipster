@@ -12,12 +12,11 @@ Food::Application.routes.draw do
 
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
-
   get 'say/goodbye' => 'say#goodbye'
 
   get 'mstudents/aut/:id' => 'mstudents#aut#:id'
 
-
+  get 'static_pages/customize' => 'static_pages#customize'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
