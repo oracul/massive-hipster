@@ -6,15 +6,17 @@
   <p><strong> <%= student.firstname %></strong></p>
   
   <p> Intervention: 
-    <%= student.intervention_type %>
+    <i><%= student.intervention_type %></i> 
+    Behavior:
+    <i><%= student.behive %></i>
   </p>
 
   <div class="meta">
   <%= time_ago_in_words(student.created_at) %>
   <span class="admin">
-  <%= link_to 'Show', student %>
+  <%= link_to 'View', student %>
   <%= link_to 'Edit', edit_student_path(student) %>
-  <%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Delete', student, method: :delete, data: { confirm: 'Are you sure?' } %>
 </span>
 </div>
 </div>
@@ -38,3 +40,6 @@
 
 <br>
 <%= link_to 'Track something new', new_student_path %>
+<br>
+<%= will_paginate @students %>
+

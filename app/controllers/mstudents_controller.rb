@@ -1,5 +1,6 @@
 class MstudentsController < ApplicationController
   before_action :set_mstudent, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /mstudents
   # GET /mstudents.json

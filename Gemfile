@@ -6,6 +6,10 @@ gem 'rails', '4.0.1'
 
 gem 'devise'
 
+gem 'jquery-turbolinks'
+
+gem 'will_paginate', '~> 3.0'
+
 # Use sqlite3 as the database for Active Record
 group :production, :staging do
   gem "pg"

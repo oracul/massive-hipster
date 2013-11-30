@@ -26,12 +26,12 @@
 </div>
 
   <div class="field">
-    <%= f.label :fullname %><br>
+    <%= f.label :name %><br>
    <%= collection_select :student, :firstname, Mstudent.all, :fullname, :fullname, :prompt => "Select name" %>
   </div>
 
    <div class="field">
-    <%= f.label :behavior %>
+    <%= f.label :behavior %><br>
    <%= collection_select :student, :behive, Behavior.all, :behavior, :behavior, :prompt => "Select behavior" %>
   </div>
 

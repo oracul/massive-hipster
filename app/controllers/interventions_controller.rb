@@ -1,5 +1,6 @@
 class InterventionsController < ApplicationController
   before_action :set_intervention, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /interventions
   # GET /interventions.json

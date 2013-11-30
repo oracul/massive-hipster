@@ -1,5 +1,6 @@
 class BehaviorsController < ApplicationController
   before_action :set_behavior, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /behaviors
   # GET /behaviors.json
