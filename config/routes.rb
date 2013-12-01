@@ -17,6 +17,7 @@ Food::Application.routes.draw do
   get 'mstudents/aut/:id' => 'mstudents#aut#:id'
 
   get 'static_pages/customize' => 'static_pages#customize'
+  get 'static_pages/report' => 'static_pages#report'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
