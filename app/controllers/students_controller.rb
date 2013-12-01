@@ -8,7 +8,7 @@ class StudentsController < ApplicationController
   def index
   #  @students = Student.where(user_id: current_user.id)
     @users = User.find(current_user.id)
-    @students = Student.paginate(:page => params[:page], :per_page => 3).order('id DESC')
+    @students = Student.paginate(:page => params[:page], :per_page => 5).order('id DESC')
   #  @students = @users.students.where("created_at >= ?", Time.zone.now.beginning_of_day).order("id DESC")
   #  @students = @users.students.limit(2).order("id DESC")
   #  @students2 = Student.where(current_user.id)

@@ -7,8 +7,8 @@ class StaticPagesController < ApplicationController
   #  @students = Student.where(user_id: current_user.id)
     @users = User.find(current_user.id)
     @students = @users.students
-    @students2 = @students.order("count_all desc").group('firstname').count
-    @behive = @students.order("count_all desc").group('behive').count
+    @students2 = @students.order("count_all desc").group('firstname').count.take(10)
+    @behive = @students.order("count_all desc").group('behive').count.take(10)
 
     # @students = @users.students.order("count_all desc").count(group: :firstname)
   # @students2 = @students.count(:group => :firstname)

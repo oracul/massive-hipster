@@ -36,6 +36,12 @@
   margin: 20px 0;
 }
 
+.behavereport{
+  border-bottom: solid 1px #CCC;
+  padding: 5px 0;
+  font-family: 'Raleway', sans-serif;
+}
+
 .status {
   border-bottom: solid 1px #CCC;
   padding: 5px 0;
