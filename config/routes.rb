@@ -18,6 +18,7 @@ Food::Application.routes.draw do
 
   get 'static_pages/customize' => 'static_pages#customize'
   get 'static_pages/report' => 'static_pages#report'
+  get 'static_pages/allusers' => 'static_pages#allusers'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

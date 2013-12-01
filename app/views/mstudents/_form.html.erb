@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :fname %><br>
-    <%= f.text_field :fname %>
+    <%= f.label :First %><br>
+    <%= f.text_field :fname, :maxlength => 30 %>
   </div>
   <div class="field">
-    <%= f.label :lname %><br>
-    <%= f.text_field :lname %>
+    <%= f.label :Last %><br>
+    <%= f.text_field :lname, :maxlength => 30 %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Student" %>
   </div>
 <% end %>

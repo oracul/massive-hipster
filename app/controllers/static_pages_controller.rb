@@ -17,4 +17,8 @@ class StaticPagesController < ApplicationController
  
     @interventions = Intervention.all
 	end
+
+  def allusers
+    @users = User.all
+  end
 end

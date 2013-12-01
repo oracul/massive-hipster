@@ -1,4 +1,4 @@
-<h1>Listing behaviors</h1>
+<h1>Listing Behaviors</h1>
 
 <table>
   <thead>
@@ -14,9 +14,9 @@
     <% @behaviors.each do |behavior| %>
       <tr>
         <td><%= behavior.behavior %></td>
-        <td><%= link_to 'Show', behavior %></td>
+        <td><%= link_to 'View', behavior %></td>
         <td><%= link_to 'Edit', edit_behavior_path(behavior) %></td>
-        <td><%= link_to 'Destroy', behavior, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', behavior, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
