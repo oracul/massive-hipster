@@ -1,6 +1,6 @@
 Food::Application.routes.draw do
   
- root to: 'interventions#index'
+ root to: 'students#index'
 
 
 

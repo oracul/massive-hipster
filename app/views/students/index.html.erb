@@ -1,10 +1,10 @@
-<h1>Tracker</h1>
+<!--<h1>Tracker</h1>-->
 
 
 <% @students.each do |student| %>
 <div class="status">
   <p><strong> <%= student.firstname %>  </strong></p>
-  <p>  <i><%= student.behive %></i> | Intervention: <i><%= student.intervention_type %></i> </p>
+  <p>  <font style="background-color:#99CCCC"><%= student.behive %></font> | <i><font style="background-color:#FFCCCC"><%= student.intervention_type %></i></font> </p>
   
 
   <div class="meta">

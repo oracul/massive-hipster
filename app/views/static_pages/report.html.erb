@@ -1,20 +1,45 @@
 <div class="behavereport">
-<strong>Student Behavior Frequency</strong><br><br>
+<strong>Weekly Student Behavior Frequency</strong><br><br>
 
 <% @students2.each do |student| %>
 
-<%= student[0] %> | <%= student[1] %>
+<font style="background-color:#99CCCC"><%= student[0] %> | <%= student[1] %></font>
 <br>
 
 <% end %>
 </div>
+
+<div class="behavereport">
+<strong>Monthly Student Behavior Frequency</strong><br><br>
+
+<% @students3.each do |student| %>
+
+<font style="background-color:#99CCCC"><%= student[0] %> | <%= student[1] %></font>
+<br>
+
+<% end %>
+</div>
+
+
 <div class="behavereport">
 <br>
-<strong>Most frequent behaviors:</strong> <br><br>
+<strong>Weekly Most Frequent Behaviors:</strong> <br><br>
 
 <% @behive.each do |behive| %>
 
-<%= behive[0] %> <%= behive[1] %>
+<font style="background-color:#FFCCCC"><%= behive[0] %> | <%= behive[1] %></font>
+<br>
+
+<% end %>
+</div>
+
+<div class="behavereport">
+<br>
+<strong>Monthly Most Frequent Behaviors:</strong> <br><br>
+
+<% @behive2.each do |behive| %>
+
+<font style="background-color:#FFCCCC"><%= behive[0] %> | <%= behive[1] %></font>
 <br>
 
 <% end %>
