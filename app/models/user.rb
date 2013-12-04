@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
    has_many :students
+   has_many :behaviors
+   has_many :mstudents
+   has_many :interventions
 end

@@ -5,7 +5,7 @@ class InterventionsController < ApplicationController
   # GET /interventions
   # GET /interventions.json
   def index
-    @interventions = Intervention.all
+    @interventions = Intervention.all.where(user_id: current_user.id)
   end
 
   # GET /interventions/1
@@ -15,6 +15,7 @@ class InterventionsController < ApplicationController
 
   # GET /interventions/new
   def new
+    @user = current_user.id
     @intervention = Intervention.new
   end
 
@@ -70,6 +71,6 @@ class InterventionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def intervention_params
-      params.require(:intervention).permit(:sfname, :slname, :intervention, :intervention_type)
+      params.require(:intervention).permit(:sfname, :slname, :intervention, :intervention_type, :user_id)
     end
 end

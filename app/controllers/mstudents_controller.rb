@@ -7,7 +7,7 @@ class MstudentsController < ApplicationController
 
 
   def index
-    @mstudents = Mstudent.all
+    @mstudents = Mstudent.all.where(user_id: current_user.id)
   end
 
   def aut
@@ -21,6 +21,7 @@ class MstudentsController < ApplicationController
 
   # GET /mstudents/new
   def new
+    @user = current_user.id
     @mstudent = Mstudent.new
   end
 
@@ -78,6 +79,6 @@ class MstudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mstudent_params
-      params.require(:mstudent).permit(:fname, :lname)
+      params.require(:mstudent).permit(:fname, :lname, :user_id)
     end
 end

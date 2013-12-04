@@ -5,7 +5,8 @@ class BehaviorsController < ApplicationController
   # GET /behaviors
   # GET /behaviors.json
   def index
-    @behaviors = Behavior.all
+    @user = current_user.id
+    @behaviors = Behavior.where(user_id: current_user.id)
   end
 
   # GET /behaviors/1
@@ -15,6 +16,7 @@ class BehaviorsController < ApplicationController
 
   # GET /behaviors/new
   def new
+    @user = current_user.id
     @behavior = Behavior.new
   end
 
@@ -70,6 +72,6 @@ class BehaviorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def behavior_params
-      params.require(:behavior).permit(:behavior, :intervention, :consequence)
+      params.require(:behavior).permit(:behavior, :intervention, :consequence, :user_id)
     end
 end

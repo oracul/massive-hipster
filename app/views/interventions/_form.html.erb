@@ -12,7 +12,10 @@
   <% end %>
 
 
- 
+ <div class="field">
+<%= f.hidden_field :user_id, :value => @user %>
+</div>
+
   <div class="field">
     <%= f.label :intervention %><br>
     <%= f.text_area :intervention, :size => "30x2", :maxlength => 250 %>
