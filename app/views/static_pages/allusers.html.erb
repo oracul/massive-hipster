@@ -1,8 +1,9 @@
 <% @users.each do |user| %>
 
-<%= user.email %>
-<%= time_ago_in_words(user.last_sign_in_at) %>
-<%= user.sign_in_count %>
+<%= user.email %> | 
+<%= time_ago_in_words(user.last_sign_in_at) %> | 
+<%= user.sign_in_count %> |
+<%= user.school %>
 <br>
 
 <% end %>

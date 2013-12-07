@@ -19,7 +19,8 @@ class MstudentsController < ApplicationController
   # GET /mstudents/1
   # GET /mstudents/1.json
   def show
-
+  @fod = Mstudent.all.where(user_id: current_user.id)
+  @fod.find(params[:id], params[:user_id])
   end
 
   # GET /mstudents/new

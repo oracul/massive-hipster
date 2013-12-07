@@ -18,6 +18,9 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+  @fod = Student.all.where(user_id: current_user.id)
+  @fod.find(params[:id], params[:user_id])
+
   end
 
   # GET /students/new
@@ -29,7 +32,8 @@ class StudentsController < ApplicationController
 
   # GET /students/1/edit
   def edit
-    authorize! :manage, :user_id => current_user.id
+  @fod = Student.all.where(user_id: current_user.id)
+  @fod.find(params[:id], params[:user_id])
   end
 
   # POST /students

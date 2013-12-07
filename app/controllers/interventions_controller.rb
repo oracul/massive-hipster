@@ -11,6 +11,8 @@ class InterventionsController < ApplicationController
   # GET /interventions/1
   # GET /interventions/1.json
   def show
+  @fod = Intervention.all.where(user_id: current_user.id)
+  @fod.find(params[:id], params[:user_id])
   end
 
   # GET /interventions/new
@@ -21,6 +23,8 @@ class InterventionsController < ApplicationController
 
   # GET /interventions/1/edit
   def edit
+  @fod = Intervention.all.where(user_id: current_user.id)
+  @fod.find(params[:id], params[:user_id])
   end
 
   # POST /interventions

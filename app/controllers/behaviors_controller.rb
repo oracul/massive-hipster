@@ -12,6 +12,8 @@ class BehaviorsController < ApplicationController
   # GET /behaviors/1
   # GET /behaviors/1.json
   def show
+  @fod = Behavior.all.where(user_id: current_user.id)
+  @fod.find(params[:id], params[:user_id])
   end
 
   # GET /behaviors/new
@@ -22,6 +24,8 @@ class BehaviorsController < ApplicationController
 
   # GET /behaviors/1/edit
   def edit
+    @fod = Behavior.all.where(user_id: current_user.id)
+    @fod.find(params[:id], params[:user_id])
   end
 
   # POST /behaviors
