@@ -8,5 +8,4 @@ class User < ActiveRecord::Base
    has_many :behaviors
    has_many :mstudents
    has_many :interventions
-   ROLES = %w[admin user author banned]
 end
