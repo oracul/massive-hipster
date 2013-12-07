@@ -29,6 +29,7 @@ class StudentsController < ApplicationController
 
   # GET /students/1/edit
   def edit
+    authorize! :manage, :user_id => current_user.id
   end
 
   # POST /students

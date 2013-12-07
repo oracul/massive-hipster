@@ -27,17 +27,17 @@
 
   <div class="field">
     <%= f.label :name %><br>
-   <%= collection_select :student, :firstname, Mstudent.all, :fullname, :fullname, :prompt => "Select name" %>
+   <%= collection_select :student, :firstname, Mstudent.all.where(user_id: current_user.id), :fullname, :fullname, :prompt => "Select name" %>
   </div>
 
    <div class="field">
     <%= f.label :behavior %><br>
-   <%= collection_select :student, :behive, Behavior.all, :behavior, :behavior, :prompt => "Select behavior" %>
+   <%= collection_select :student, :behive, Behavior.all.where(user_id: current_user.id), :behavior, :behavior, :prompt => "Select behavior" %>
   </div>
 
 <div class="field">
   <%= f.label :intervention %><br>
-  <%= collection_select :student, :intervention_type, Intervention.all, :intervention, :intervention, :prompt => "Select an intervention" %>
+  <%= collection_select :student, :intervention_type, Intervention.all.where(user_id: current_user.id), :intervention, :intervention, :prompt => "Select an intervention" %>
 </div>
 
 <div class="field">

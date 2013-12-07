@@ -1,3 +1,5 @@
+require 'role_model'
+
 class MstudentsController < ApplicationController
   before_action :set_mstudent, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
@@ -17,6 +19,7 @@ class MstudentsController < ApplicationController
   # GET /mstudents/1
   # GET /mstudents/1.json
   def show
+
   end
 
   # GET /mstudents/new
@@ -27,6 +30,9 @@ class MstudentsController < ApplicationController
 
   # GET /mstudents/1/edit
   def edit
+  @fod = Mstudent.all.where(user_id: current_user.id)
+  @fod.find(params[:id], params[:user_id])
+   # authorize! :update, @article
   end
 
   # POST /mstudents
