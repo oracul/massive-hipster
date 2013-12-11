@@ -1,24 +1,44 @@
+
+	
 <div class="behavereport">
 <strong>Weekly Student Behavior Frequency</strong><br><br>
 
+<%= @students2[4] %>
+
 <% @students2.each do |student| %>
-
-<font style="background-color:#99CCCC"><%= student[0] %> | <%= student[1] %></font>
+<font style="background-color:<%= cycle("#80C4C4", "#EB99C2", "#CCFF66", "#7A7ACC") %>">"><%= student[0] %> | <%= student[1] %></font>
 <br>
 
 <% end %>
 </div>
-
-<div class="behavereport">
-<strong>Monthly Student Behavior Frequency</strong><br><br>
-
-<% @students3.each do |student| %>
-
-<font style="background-color:#99CCCC"><%= student[0] %> | <%= student[1] %></font>
 <br>
+	<canvas id="canvas" height="250" width="500"></canvas>
 
-<% end %>
-</div>
+
+	<script>
+
+		var lineChartData = {
+			labels : [<% @students2[0...-1].each do |student| %>
+			"<%=student[0]%>",
+			<% end %>"<%= @students2.last[0] %>"],
+			datasets : [
+				{
+					fillColor : "rgba(151,187,205,0.5)",
+					strokeColor : "rgba(151,187,205,1)",
+					pointColor : "rgba(151,187,205,1)",
+					pointStrokeColor : "#fff",
+					data : [<% @students2[0...-1].each do |student| %>
+			<%= student[1] %>,<% end %><%= @students2.last[1] %>]
+				}
+			]
+			
+		}
+
+	var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData);
+	
+	</script>
+
+
 
 
 <div class="behavereport">
@@ -27,11 +47,75 @@
 
 <% @behive.each do |behive| %>
 
-<font style="background-color:#FFCCCC"><%= behive[0] %> | <%= behive[1] %></font>
+<font style="background-color:<%= cycle("#80C4C4", "#EB99C2", "#CCFF66", "#7A7ACC") %>"><%= behive[0] %> | <%= behive[1] %></font>
 <br>
 
 <% end %>
 </div>
+
+<br>
+
+		<canvas id="canvas3" height="250" width="250"></canvas>
+
+
+	<script>
+
+		var pieData = [
+		<% @behive[0...-1].each do |behive| %>
+				{
+					value: <%= behive[1] %>,
+					color: "<%= cycle("#80C4C4", "#EB99C2", "#CCFF66", "#7A7ACC") %>"
+				}, <% end %>
+				{
+					value : <%= @behive.last[1] %>,
+					color : "#7AA3CC"
+				}
+			
+			];
+
+	var myPie = new Chart(document.getElementById("canvas3").getContext("2d")).Pie(pieData);
+	
+	</script>
+
+
+<div class="behavereport">
+<strong>Monthly Student Behavior Frequency</strong><br><br>
+
+<% @students3.each do |student| %>
+
+<font style="background-color:<%= cycle("#80C4C4", "#EB99C2", "#CCFF66", "#7A7ACC") %>">"><%= student[0] %> | <%= student[1] %></font>
+<br>
+
+<% end %>
+</div>
+<br>
+	<canvas id="canvas2" height="250" width="500"></canvas>
+
+
+	<script>
+
+		var lineChartData = {
+			labels : [<% @students3[0...-1].each do |student| %>
+			"<%=student[0]%>",
+			<% end %>"<%= @students3.last[0] %>"],
+			datasets : [
+				{
+					fillColor : "rgba(151,187,205,0.5)",
+					strokeColor : "rgba(151,187,205,1)",
+					pointColor : "rgba(151,187,205,1)",
+					pointStrokeColor : "#fff",
+					data : [<% @students3[0...-1].each do |student| %>
+			<%= student[1] %>,<% end %><%= @students3.last[1] %>]
+				}
+			]
+			
+		}
+
+	var myLine = new Chart(document.getElementById("canvas2").getContext("2d")).Line(lineChartData);
+	
+	</script>
+
+
 
 <div class="behavereport">
 <br>
@@ -39,9 +123,31 @@
 
 <% @behive2.each do |behive| %>
 
-<font style="background-color:#FFCCCC"><%= behive[0] %> | <%= behive[1] %></font>
+<font style="background-color:<%= cycle("#80C4C4", "#EB99C2", "#CCFF66", "#7A7ACC") %>"><%= behive[0] %> | <%= behive[1] %></font>
 <br>
 
 <% end %>
 
 </div>
+<br>
+		<canvas id="canvas4" height="250" width="250"></canvas>
+
+
+	<script>
+
+		var pieData = [
+		<% @behive2[0...-1].each do |behive| %>
+				{
+					value: <%= behive[1] %>,
+					color: "<%= cycle("#80C4C4", "#EB99C2", "#CCFF66", "#7A7ACC") %>"
+				}, <% end %>
+				{
+					value : <%= @behive2.last[1] %>,
+					color : "#7AA3CC"
+				}
+			
+			];
+
+	var myPie = new Chart(document.getElementById("canvas4").getContext("2d")).Pie(pieData);
+	
+	</script>

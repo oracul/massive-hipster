@@ -19,6 +19,10 @@ class StaticPagesController < ApplicationController
   #  @students = @users.students.where("created_at >= ?", Time.zone.now.beginning_of_day).order("id DESC")
  
     @interventions = Intervention.all
+
+   # @EVENT_COLORS = "%06x" % (rand * 0xffffff)
+   @event_colors = "red", "green", "blue"
+
 	end
 
       def restrict_access
