@@ -1,4 +1,10 @@
+<% if @students.count <= 5 %>
+<br>
+<div class="behavereport">
+	<p> Customize your picotrend to view pretty reports! Track at least five behaviors to begin viewing reports!!!</p>
+</div>
 
+<% else %>
 	
 <div class="behavereport">
 <strong>Weekly Student Behavior Frequency</strong><br><br>
@@ -6,7 +12,7 @@
 <%= @students2[4] %>
 
 <% @students2.each do |student| %>
-<font style="background-color:<%= cycle("#80C4C4", "#EB99C2", "#CCFF66", "#7A7ACC") %>">"><%= student[0] %> | <%= student[1] %></font>
+<font style="background-color:<%= cycle("#80C4C4", "#EB99C2", "#CCFF66", "#7A7ACC") %>"><%= student[0] %> | <%= student[1] %></font>
 <br>
 
 <% end %>
@@ -83,7 +89,7 @@
 
 <% @students3.each do |student| %>
 
-<font style="background-color:<%= cycle("#80C4C4", "#EB99C2", "#CCFF66", "#7A7ACC") %>">"><%= student[0] %> | <%= student[1] %></font>
+<font style="background-color:<%= cycle("#80C4C4", "#EB99C2", "#CCFF66", "#7A7ACC") %>"><%= student[0] %> | <%= student[1] %></font>
 <br>
 
 <% end %>
@@ -151,3 +157,5 @@
 	var myPie = new Chart(document.getElementById("canvas4").getContext("2d")).Pie(pieData);
 	
 	</script>
+
+	<% end %>
