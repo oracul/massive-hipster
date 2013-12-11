@@ -4,7 +4,7 @@
 <% @students.each do |student| %>
 <div class="status">
   <p><strong> <%= student.firstname %>  </strong></p>
-  <p>  <font style="background-color:#99CCCC"><i class="fa fa-meh-o"></i> <%= student.behive %></font> | <i><font style="background-color:#FFCCCC"><i class="fa fa-check-square"></i> <%= student.intervention_type %></i></font> </p>
+  <p>  <font style="background-color:#69D2E7"><i class="fa fa-meh-o"></i> <%= student.behive %></font> | <i><font style="background-color:#F38630"><i class="fa fa-check-square"></i> <%= student.intervention_type %></i></font> </p>
   <div class="meta">
   <%= time_ago_in_words(student.created_at) %>
   <span class="admin">
